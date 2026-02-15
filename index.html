@@ -1,0 +1,342 @@
+<!doctype html>
+<html lang="cs">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Svět hudby v ascii</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="./styles/style.css">
+  </head>
+  <body>
+  
+		<!-- nav -->
+		<nav class="navbar navbar-expand-md bg-body-tertiary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Svět hudby v ascii</a>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="https://github.com/ThatRandomNick/PW-ssakhk2025-26-MS-2" target="_blank">Github repo</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Relevantní odkazy</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="https://pianoletternotes.blogspot.com/" target="_blank">pianoletternotes</a></li>
+                <li><a class="dropdown-item" href="https://github.com/Daxanius/zing" target="_blank">zing github</a></li>
+                <li><a class="dropdown-item" href="https://www.xiph.org/ao/" target="_blank">libao</a></li>
+                <li><a class="dropdown-item" href="https://modarchive.org/" target="_blank">moduly</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    
+    <!-- main -->
+    <div class="container-xxl bd-gutter mt-3">
+  
+    <div class="b-example-divider"></div>
+		<!-- intro -->
+		<h1 class="bg-info rounded-3 p-1">Zdravíčko</h1>
+		<p>
+  		Chtěl jsi někdy přehrát hudbu, aniž bys měl jen trapnu mp3 nebo <a href="https://modarchive.org/" target="_blank">modul</a>?
+  		Pokud ano, možná to i půjde.
+		</p>
+		
+    <img src="images/cava.png" class="img-fluid" alt="console audio visualizer alsa">
+    <br>
+    <br>
+		<!-- what is .nm -->
+		<h2 class="text-light bg-secondary rounded-3 p-2">Co je .nm soubor</h2>
+		<p>
+		  Notemap soubory jsou jednoduchý zápis pro noty.
+		</p>
+    <div class="card card-body" style="width: 18rem">
+  		<pre>
+# komentář
+5|--a--a--a--a--a--a--a--a--|
+5|--d--d--d--d--d--d--d--d--|
+5|--F--F--F--F--F--F--F--F--|
+4|d-----d-----d-----d-------|
+3|---------------------a--b-|
+
+5|a--a--a--a--a--a--a--a--a-|
+5|d--d--d--d--d--d--d--d--d-|
+5|F--F--F--F--F--F--F--F--F-|
+4|----------------------d---|
+3|----b-----b-----a--b------|</pre>
+		</div>
+		<br>
+		
+		<p>
+  		V jednoduchosti:
+		  <ul>
+		  <li>Číslo udává oktávů</li>
+		  <li>Pajpa vyrváří scope not</li>
+		  <li>Uvnitř scopu platí:
+		  </li>
+		    <ul>
+		      <li>'-' je prázdná doba</li>
+		      <li>Malé písmeno je odpovídající nota</li>
+		      <li>Velké písmeno je odpovídající ostrá nota (#)</li>
+		    </ul>
+		  </ul>
+		</p>
+		
+		<p>
+		  Tento formát pionýroval <a href="https://github.com/Daxanius" target="_blank">Daxanius<a>, který stojí za Zing projektem, ale o tom níže.
+		</p>
+		
+		<!-- where get / how play -->
+    <div class="container text-center">
+      <div class="row g-4">
+        <div class="col-lg-6 col-sm-12 d-flex">
+          <div class="card card-body">
+		        <h3 class="card-title">Kde je sehnat</h3>
+		        <p>
+		          Fenomenálním zdrojem je <a href="https://pianoletternotes.blogspot.com/" target="_blank">pianoletternotes</a> jsou tam auto re-formátované midi soubobory, a tak tam najdete mnoho skladeb.
+		          Pokud budete chtít přehrávat soubory s této stránky, bude potřeba odstranit "LH:" a "RH:", které říkají jakou rukou máte sekvenci hrát.
+		        </p>
+	        </div>
+		      
+          
+        </div>
+        <div class="col-lg-6 col-sm-12 d-flex">
+          <div class="card card-body">
+		        <h3 class="card-title">Jak se používá</h3>
+		        <p>
+		          Zápis se čte z leva do prava. Pokud je více řádků vedle sebe, tak se čtou najednou.
+		        </p>
+		        <img src="https://camo.githubusercontent.com/da1a8805f1c427a6c2d93347010d50e31132e1d3bc2b09b0ead33f9a04badb05/68747470733a2f2f6c68332e676f6f676c6575736572636f6e74656e742e636f6d2f2d59634c5a5934706b644c302f57775775506f534f596b492f414141414141414364726f2f796b775770535355484963396d64546149514756626e517459334c476f325f5677434c63424741732f683230302f686f77253242746f25324272656164253242616e64253242706c61792532427468652532426c65747465722532426e6f7465732e676966" class="img-fluid" alt="animace přehrávání notemapy">
+          </div>
+        </div>
+      </div>
+    </div>
+    <br>
+    <p class="d-inline-flex gap-1">
+      <button class="btn btn-danger" type="button" data-bs-toggle="collapse" data-bs-target="#extractscript" aria-expanded="false" aria-controls="extractscript">
+        Script pro extrakci
+      </button>
+    </p>
+    <div class="collapse" id="extractscript">
+      <div class="card card-body">
+        <pre>
+#!/bin/bash
+
+link="$1"
+filename="$2"
+if [ "$link" == "" ]; then
+  echo "you have to specify link"
+  exit 1
+fi
+
+# curl "$link" > "tst.html"
+# f=$(cat "tst.html")
+f="$(curl -s "$link")"
+
+err=$?
+if [ "$err" != "0" ]; then
+  echo "curl error: $err"
+  exit 1
+fi
+
+# find title
+if [ "$filename" == "" ]; then
+  title=$(echo "$f" | grep "headline")
+  tmp=${title#*headline\"\:\ \"}
+  filename=${tmp%"\",\"description"*}
+  if [ "$filename" == "" ]; then
+    filename=out.nm
+    echo "confused - defaulting to: $filename"
+  else
+    filename="$filename.nm"
+    echo "output file name not specified - guessing: $filename"
+  fi
+fi
+
+echo "link: $link"
+echo "filename: $filename"
+
+if [ -f "$filename" ]; then
+  # echo "output file exists - press enter to continue (overwrite) or ctrl+C to terminate"
+  # read
+  echo "output file exists - overwrite"
+fi
+
+# start writing file
+echo "# link: $link" > "$filename"
+echo "# date: $(date)" >> "$filename"
+echo "# note: done via script (nm-from-link.sh) play with zing" >> "$filename"
+echo "# zing: https://github.com/Daxanius/zing" >> "$filename"
+
+# find notes
+duration=0
+chords_per_note=0
+tmp=${f#*"<code>"}
+notes=${tmp%"</code>"*}
+
+IFS=$'\n'
+for i in $notes; do
+  # blank
+  if [ "$i" == "<br />" ]; then
+    echo "" >> "$filename"
+    duration="$(( duration + 1 ))"
+    continue
+  fi
+  
+  # note set
+  # RH:<span class="Octave-6">6|--------------A-----------|</span><br />
+  if [[ "$i" == *"Octave"* ]]; then
+    tmp=${i#*\"\>}
+    note=${tmp%"</span><br />"*}
+    # replace ${parameter//pattern/string} mainly for badapple
+    note=${note//"—"/"-"}
+    note=${note//"&#8212;"/"-"}
+    
+    if [ "$chords_per_note" == 0 ]; then
+      chords_per_note="$(( $(echo "$note" | wc -m) - 3 ))"
+    fi
+    
+    echo "$note" >> "$filename"
+    continue
+  fi
+done
+
+duration="$(( duration * chords_per_note ))"
+
+echo "# multiply this number by --chord-duration (ms)" >> "$filename"
+echo "# divide by 1000 - will give you rough playtime in seconds" >> "$filename"
+echo "# time: $duration" >> "$filename"
+
+exit 0
+        </pre>
+      </div>
+    </div>
+    <br>
+    
+    <!-- playing -->
+		<h2 class="text-light bg-secondary rounded-3 p-2">Jak je přehrát</h2>
+    <p>
+      Nečekaně takto obskurní formát má podporu v podstatě jen u jednoho projektu, ale jeho jednoduchost umožňuje ho implementovat vzkutku jednodušše.
+      V podstatě vám stačí základní chápání zvuku, nepotřebujete nic jiného než knihovnu na přehrání vzorku zvuku.
+    </p>
+    
+    <div class="container text-center">
+      <div class="row g-4"> <!-- row-cols-2 -->
+        <div class="col-lg-6 col-sm-12 d-flex">
+          <div class="card card-body">
+		        <h3 class="card-title">Zing</h3>
+		        <p>
+		          <a href="https://github.com/Daxanius/zing" target="_blank">Zing</a> je rust projekt pro přehrávání .nm souborů na linuxu přes bzučák na motherboardu.
+		          Tento projekt byl první, který přišel s konceptem přehrávání .nm souborů.
+		        </p>
+		        
+		        <p>
+		          Protože potřebuje konkrétní hardware, tak není ideální pro běžné použití.
+		          Navíc se tento program skáldá ze dvou částí: cli a daemon.
+		          Toto rozdělení je potřeba, protože přímá interakce s bzučátkem vyžaduje root access.
+		        </p>
+		        
+            <figure class="figure">
+              <img src="images/zing.png" class="figure-img img-fluid rounded" alt="screenshot zing githubu">
+              <figcaption class="figure-caption">Rust byla chyba</figcaption>
+            </figure>
+          </div>
+        </div>
+        
+        <div class="col-lg-6 col-sm-12 d-flex">
+          <div class="card card-body">
+		        <h3 class="card-title">Rezing</h3>
+		        <p>
+		          Rezing je cli/tui nástroj pro přehrávání .nm souborů z reproduktorů.
+		          Namísto bzučáku využívá <a href="https://www.xiph.org/ao/" target="_blank">libao</a> a je implementován v C++.
+		        </p>
+		        
+            <figure class="figure">
+              <img src="images/rezing.png" class="figure-img img-fluid" alt="screenshot rezingu">
+              <figcaption class="figure-caption">Ukázka přehrávání <a href="https://pianoletternotes.blogspot.com/2018/02/your-reality-doki-doki-literature-club.html" target="_blank">Your Reality</a></figcaption>
+            </figure>
+          </div>
+        </div>
+        
+        <div class="col-lg-6 col-sm-12 d-flex">
+          <div class="card card-body">
+		        <h3 class="card-title">Tzing</h3>
+		        <p>
+		          Tzing je tui front-end pro Rezing.
+		        </p>
+		        <p>
+		          Bonusem je možnost načítání ascii alba a zobrazení komentáře v podporovaných souborech.
+		        </p>
+		        
+            <figure class="figure">
+              <img src="images/tzing.png" class="figure-img img-fluid" alt="screenshot tzingu">
+              <figcaption class="figure-caption">Ukázka přehrávání <a href="https://pianoletternotes.blogspot.com/2020/05/why-did-i-say-okie-dokie-by-stupendium.html" target="_blank">Why Did I Say Okie Doki?</a></figcaption>
+            </figure>
+          </div>
+        </div>
+        
+        <div class="col-lg-6 col-sm-12 d-flex">
+          <div class="card card-body">
+		        <h3 class="card-title">Ardzing</h3>
+		        <p>
+		          Bzučák připojený na output arduina může fungovat podobně jako Zing.
+		          Také lze použít sériák pro posílání dat z počítače.
+		        </p>
+
+            <figure class="figure">
+              <img src="images/arduino.png" class="figure-img img-fluid" alt="obrázek arduina">
+            </figure>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br>
+		
+		<!-- suggestions -->
+		<h2 class="bg-warning rounded-3 p-2">Návrhy a připomínky</h2>
+		<p>
+		Pokuď zde nenajdete to co potřebujete, nebo byste zde rádi vyděli něco dalšího, tak můžete použít tento formulář pro zpětnou vazbu.
+		</p>
+	  
+	  <form>
+      <div class="mb-3">
+        <label for="emailinput" class="form-label">E-mail</label>
+        <input type="email" class="form-control" id="emailinput" placeholder="jmeno@example.com">
+      </div>
+      <div class="mb-3">
+        <label for="messageinput" class="form-label">Zpráva</label>
+        <textarea class="form-control" id="messageinput" rows="7"></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+		<!-- end main -->
+		</div>
+		
+		<!-- footer -->
+		<footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+		  <p class="col-md-4 mb-0 text-body-secondary">Sobotka Michal (sobotka.michal@ssakhk.cz) - bootstrap projekt 2025/26</p>
+		  <a href="index.html" class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none" aria-label="Bootstrap">Zpět nahoru</a>
+	  </footer>
+		
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+	</body>
+</html>
+<!--
+what is .nm
+(1x1)
+
+where to get them
+how to play it
+(1x2)
+
+playing on pc
+- zing
+- rezing
+- tzing
+- ardzing
+(2x2 grid)
+
+suggestions form
+-->
